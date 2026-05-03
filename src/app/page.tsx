@@ -104,7 +104,7 @@ export default function Home() {
                 {t.hero.projects}
               </Link>
 
-              <Link href="#contact" className="btn-secondary">
+              <Link href="https://wa.me/201555630515" className="btn-secondary">
                 {t.hero.contact}
               </Link>
             </div>
