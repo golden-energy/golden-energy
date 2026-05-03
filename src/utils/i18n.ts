@@ -89,9 +89,10 @@ export const translations = {
       quickLinks: "Quick Links",
       services: "Services",
       contactInfo: "Contact Info",
-      location: "Ismailia, Egypt",
-      tradeRecord: "Trade Record: 27751",
-      taxesCard: "Taxes Card: 768-054-613",
+      location:
+        "Sudan Street - Youth Graduates Building - Behind Reda Helmy - Ismailia",
+      tradeRecord: "Tax Register: 27751",
+      taxesCard: "Tax Card: 768-054-613",
       phoneNumber: "+201555630515",
       serviceItems: [
         "Electrical Supply",

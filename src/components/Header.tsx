@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +40,7 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="logo">
-          <h1>{t.brandName}</h1>
-          <span>{t.brandTagline}</span>
+          <Image src="/images/logo/logo.png" alt="Logo" width={300} height={100} />
         </div>
 
         {/* Desktop Nav */}
