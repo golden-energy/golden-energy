@@ -1,0 +1,10 @@
+# Ignore environment variable files (don't commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Ignore node_modules
+node_modules/
+
+# Ignore build files
+dist/
