@@ -10,6 +10,7 @@ import {
   SuppliersImage,
   TrustedClients,
 } from "@/utils/data";
+import Footer from "@/components/Footer";
 
 const serviceFloatingImages = [
   {
@@ -302,56 +303,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer>
-        <div className="container footer-container">
-          <div className="footer-logo">
-            <h3>{t.brandName}</h3>
-            <p>{t.footer.body}</p>
-          </div>
-
-          <div className="footer-links">
-            <h4>{t.footer.quickLinks}</h4>
-
-            <ul>
-              <li>
-                <Link href="#home">{t.nav.home}</Link>
-              </li>
-              <li>
-                <Link href="#services">{t.nav.services}</Link>
-              </li>
-              <li>
-                <Link href="#projects">{t.nav.projects}</Link>
-              </li>
-              <li>
-                <Link href="#clients">{t.nav.clients}</Link>
-              </li>
-              <li>
-                <Link href="#suppliers">{t.nav.suppliers}</Link>
-              </li>
-              <li>
-                <Link href="#contact">{t.nav.contact}</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-services">
-            <h4>{t.footer.services}</h4>
-
-            <ul>
-              {t.footer.serviceItems.map((service) => (
-                <li key={service}>{service}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-contact">
-            <h4>{t.footer.contactInfo}</h4>
-            <p>{t.footer.location}</p>
-            <p>+201555630515</p>
-            <p>goldenenergymm@gmail.com</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

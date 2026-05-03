@@ -90,6 +90,9 @@ export const translations = {
       services: "Services",
       contactInfo: "Contact Info",
       location: "Ismailia, Egypt",
+      tradeRecord: "Trade Record: 27751",
+      taxesCard: "Taxes Card: 768-054-613",
+      phoneNumber: "+201555630515",
       serviceItems: [
         "Electrical Supply",
         "Network Design",
@@ -100,7 +103,8 @@ export const translations = {
     },
     projectsPage: {
       title: "Our Project History",
-      subtitle: "A comprehensive record of Golden Energy's excellence in electrical supply and contracting.",
+      subtitle:
+        "A comprehensive record of Golden Energy's excellence in electrical supply and contracting.",
       loading: "Loading projects...",
       errorPrefix: "Error",
       empty: "No projects found.",
@@ -196,7 +200,11 @@ export const translations = {
       quickLinks: "روابط سريعة",
       services: "الخدمات",
       contactInfo: "بيانات التواصل",
-      location: "الإسماعيلية، مصر",
+      location:
+        " شارع السودان - عمارة الشباب الخريجين - خلف رضا حلمي - الإسماعيلية",
+      tradeRecord: "السجل الضريبي: 27751",
+      taxesCard: "البطاقة الضريبية: 768-054-613",
+      phoneNumber: "201555630515+",
       serviceItems: [
         "التوريدات الكهربائية",
         "تصميم الشبكات",
@@ -207,7 +215,8 @@ export const translations = {
     },
     projectsPage: {
       title: "سجل مشروعاتنا",
-      subtitle: "سجل شامل لخبرة جولدن إنرجي في التوريدات والمقاولات الكهربائية.",
+      subtitle:
+        "سجل شامل لخبرة جولدن إنرجي في التوريدات والمقاولات الكهربائية.",
       loading: "جاري تحميل المشروعات...",
       errorPrefix: "خطأ",
       empty: "لا توجد مشروعات.",
