@@ -264,32 +264,38 @@ export default function Home() {
         <div className="container">
           <h2>{t.clients.title}</h2>
 
-          <div className="client-logos">
-            {TrustedClients.map((trusted) => (
-              <Image
-                key={trusted.id}
-                src={trusted.url}
-                alt={trusted.name}
-                width={500}
-                height={500}
-                loading="lazy"
-              />
-            ))}
+          <div className="logos-marquee-wrapper">
+            <div className="logos-marquee-track">
+              {[...TrustedClients, ...TrustedClients].map((trusted, index) => (
+                <div className="logo-card" key={`${trusted.id}-${index}`}>
+                  <Image
+                    src={trusted.url}
+                    alt={trusted.name}
+                    width={160}
+                    height={80}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           <h2 id="suppliers">{t.clients.suppliers}</h2>
 
-          <div className="supplier-logos">
-            {SuppliersImage.map((supplier) => (
-              <Image
-                src={supplier.url}
-                alt={supplier.name}
-                key={supplier.id}
-                width={400}
-                height={400}
-                loading="lazy"
-              />
-            ))}
+          <div className="logos-marquee-wrapper">
+            <div className="logos-marquee-track logos-marquee-track--reverse">
+              {[...SuppliersImage, ...SuppliersImage].map((supplier, index) => (
+                <div className="logo-card" key={`${supplier.id}-${index}`}>
+                  <Image
+                    src={supplier.url}
+                    alt={supplier.name}
+                    width={160}
+                    height={80}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -314,38 +314,114 @@ html[dir="rtl"] .hero-image {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Clients & Suppliers */
+/* =========================================
+   Clients & Suppliers — Marquee
+   ========================================= */
+
 .clients-suppliers {
-  padding: 50px 0;
+  padding: 60px 0;
   text-align: center;
+  background: #f0f4f8;
+  overflow: hidden;
 }
+
 .clients-suppliers h2 {
   color: #f2b500;
   font-size: 1.6rem;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   text-decoration: none;
 }
-.client-logos,
-.supplier-logos {
+
+/* Wrapper clips overflow and fades edges */
+.logos-marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+  margin-bottom: 48px;
+}
+
+.logos-marquee-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Fade left & right edges using the section background colour */
+.logos-marquee-wrapper::before,
+.logos-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #f0f4f8, transparent);
+}
+
+.logos-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #f0f4f8, transparent);
+}
+
+/* Scrolling strip */
+.logos-marquee-track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
   gap: 20px;
-  margin-bottom: 35px;
-  width: 100%;
+  width: max-content;
+  animation: marquee-scroll 24s linear infinite;
 }
-.client-logos img,
-.supplier-logos img {
-  width: 90px;
-  height: 45px;
-  object-fit: contain;
-  filter: grayscale(0.6);
-  transition: 0.3s;
+
+/* Suppliers row scrolls in reverse */
+.logos-marquee-track--reverse {
+  animation-direction: reverse;
+  animation-duration: 28s;
 }
-.client-logos img:hover,
-.supplier-logos img:hover {
-  transform: scale(1.05);
-  filter: grayscale(0);
+
+/* Pause on hover */
+.logos-marquee-wrapper:hover .logos-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Individual logo card */
+.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 24px;
+  width: 170px;
+  height: 88px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #f2b500;
+}
+
+.logo-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  filter: grayscale(1) opacity(0.7);
+  transition: filter 0.25s ease;
+}
+
+.logo-card:hover img {
+  filter: grayscale(0) opacity(1);
 }
 
 /* Contact Band */
@@ -429,7 +505,6 @@ footer ul li a:hover {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-/* Animate to X */
 .hamburger.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -455,12 +530,10 @@ footer ul li a:hover {
 
 /* ---- Mobile Nav + Layout (≤ 768px) ---- */
 @media (max-width: 768px) {
-  /* Show hamburger */
   .hamburger {
     display: flex;
   }
 
-  /* Mobile nav drawer */
   .nav-menu {
     position: fixed;
     top: 0;
@@ -517,7 +590,6 @@ footer ul li a:hover {
     margin-right: 0;
   }
 
-  /* Overlay behind drawer */
   .nav-overlay {
     display: none;
     position: fixed;
@@ -529,7 +601,6 @@ footer ul li a:hover {
     display: block;
   }
 
-  /* Hero stacks vertically */
   .hero-container {
     flex-direction: column;
     gap: 30px;
@@ -562,7 +633,6 @@ footer ul li a:hover {
     margin-left: 0;
   }
 
-  /* Stats — 2 per row */
   .stats-container {
     justify-content: center;
   }
@@ -571,32 +641,37 @@ footer ul li a:hover {
     flex: 0 0 calc(50% - 15px);
   }
 
-  /* Services — 1 per row */
   .service-card {
     min-width: calc(100% - 20px);
     max-width: 100%;
   }
 
-  /* Projects — 1 per row */
   .project-card {
     min-width: calc(100% - 20px);
     max-width: 100%;
   }
 
-  /* Logos smaller */
-  .client-logos img,
-  .supplier-logos img {
-    width: 70px;
-    height: 36px;
+  /* Marquee — narrower cards on tablet */
+  .logo-card {
+    width: 140px;
+    height: 72px;
+    padding: 12px 16px;
   }
 
-  /* Contact band stacks */
+  .logos-marquee-track {
+    gap: 14px;
+  }
+
+  .logos-marquee-wrapper::before,
+  .logos-marquee-wrapper::after {
+    width: 40px;
+  }
+
   .contact-band p {
     font-size: 0.9rem;
     padding: 0 10px;
   }
 
-  /* Footer stacks */
   .footer-container {
     flex-direction: column;
     gap: 20px;
@@ -605,7 +680,6 @@ footer ul li a:hover {
     max-width: 100%;
   }
 
-  /* Section headings */
   .services h2,
   .featured-projects h2 {
     font-size: 1.5rem;
@@ -635,6 +709,25 @@ footer ul li a:hover {
   .clients-suppliers {
     padding: 35px 0;
   }
+
+  /* Marquee — smallest cards on mobile */
+  .logo-card {
+    width: 120px;
+    height: 64px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .logos-marquee-track {
+    gap: 10px;
+    animation-duration: 18s;
+  }
+
+  .logos-marquee-wrapper::before,
+  .logos-marquee-wrapper::after {
+    width: 28px;
+  }
+
   .contact-band p:first-child {
     font-size: 1rem;
     font-weight: bold;
@@ -644,37 +737,43 @@ footer ul li a:hover {
   }
 }
 
+/* Reduced motion — static grid fallback */
+@media (prefers-reduced-motion: reduce) {
+  .logos-marquee-track,
+  .logos-marquee-track--reverse {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 /* =====================
    HERO PERFECT ALIGNMENT FIX
    ===================== */
 
-/* Ensure both sides align perfectly */
 .hero-container {
   display: flex;
-  align-items: center; /* KEY: vertical alignment */
+  align-items: center;
   justify-content: space-between;
   gap: 60px;
 }
 
-/* Keep both sides equal */
 .hero-text,
 .hero-image {
   flex: 1;
 }
 
-/* Limit text width for clean alignment */
 .hero-text {
   max-width: 520px;
 }
 
-/* Center image vertically and horizontally */
 .hero-image {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Make image size consistent with text height */
 .hero-image img {
   width: 100%;
   max-width: 500px;
@@ -687,14 +786,12 @@ footer ul li a:hover {
   transform: translateY(-10px);
 }
 
-/* Optional: align image slightly lower for visual balance */
 @media (min-width: 1024px) {
   .hero-image {
-    transform: translateY(10px); /* tweak this: 0–20px */
+    transform: translateY(10px);
   }
 }
 
-/* Mobile fix */
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
@@ -734,7 +831,6 @@ footer ul li a:hover {
   position: relative;
   display: inline-block;
   overflow: hidden;
-
   margin-top: 20px;
   padding: 10px 20px;
   color: #fff;
@@ -753,7 +849,6 @@ footer ul li a:hover {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 0;
   height: 100%;
   background: #f2b500;
@@ -810,35 +905,12 @@ footer ul li a:hover {
   object-fit: cover;
 }
 
-.floating-service-photo-1 {
-  top: 8px;
-  left: 2%;
-}
-
-.floating-service-photo-2 {
-  top: 16px;
-  right: 4%;
-}
-
-.floating-service-photo-3 {
-  top: 42%;
-  left: 0;
-}
-
-.floating-service-photo-4 {
-  top: 40%;
-  right: 1%;
-}
-
-.floating-service-photo-5 {
-  bottom: 24px;
-  left: 5%;
-}
-
-.floating-service-photo-6 {
-  bottom: 30px;
-  right: 6%;
-}
+.floating-service-photo-1 { top: 8px;  left: 2%; }
+.floating-service-photo-2 { top: 16px; right: 4%; }
+.floating-service-photo-3 { top: 42%;  left: 0; }
+.floating-service-photo-4 { top: 40%;  right: 1%; }
+.floating-service-photo-5 { bottom: 24px; left: 5%; }
+.floating-service-photo-6 { bottom: 30px; right: 6%; }
 
 .service-mini-photo-row {
   max-width: 780px;
