@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { LanguageProvider } from "@/components/LanguageProvider";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -82,10 +82,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
     apple: [{ url: "/apple-icon.png" }],
   },
 
@@ -104,8 +101,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr">
-      <body>{children}</body>
-    </html>
+    <LanguageProvider>
+      <html lang="en" dir="ltr">
+        <body>{children}</body>
+      </html>
+    </LanguageProvider>
   );
 }
