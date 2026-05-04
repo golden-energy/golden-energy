@@ -20,11 +20,11 @@ export default function Header() {
   const closeMenu = () => setIsOpen(false);
   const routes: { id: number; name: string; href: string }[] = [
     { id: 1, name: t.nav.home, href: "/" },
-    { id: 2, name: t.nav.services, href: "#services" },
-    { id: 3, name: t.nav.projects, href: "#projects" },
-    { id: 4, name: t.nav.clients, href: "#clients" },
-    { id: 5, name: t.nav.suppliers, href: "#suppliers" },
-    { id: 6, name: t.nav.contact, href: "#contact" },
+    { id: 2, name: t.nav.services, href: "/#services" },
+    { id: 3, name: t.nav.projects, href: "/#projects" },
+    { id: 4, name: t.nav.clients, href: "/#clients" },
+    { id: 5, name: t.nav.suppliers, href: "/#suppliers" },
+    { id: 6, name: t.nav.contact, href: "/#contact" },
   ];
 
   return (
@@ -40,7 +40,12 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="logo">
-          <Image src="/images/logo/logo.png" alt="Logo" width={300} height={100} />
+          <Image
+            src="/images/logo/logo.png"
+            alt="Logo"
+            width={300}
+            height={100}
+          />
         </div>
 
         {/* Desktop Nav */}
