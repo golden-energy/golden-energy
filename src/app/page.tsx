@@ -85,7 +85,7 @@ const serviceSmallImages = [
 ];
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <>
@@ -262,7 +262,9 @@ export default function Home() {
       {/* Clients & Suppliers */}
       <section className="clients-suppliers" id="clients" dir="ltr">
         <div className="container">
-          <h2>{t.clients.title}</h2>
+          <h2 dir={language === "ar" ? "rtl" : "ltr"}>
+            {t.clients.title}
+          </h2>
 
           <div className="logos-marquee-wrapper">
             <div className="logos-marquee-track">
@@ -280,7 +282,9 @@ export default function Home() {
             </div>
           </div>
 
-          <h2 id="suppliers">{t.clients.suppliers}</h2>
+          <h2 id="suppliers" dir={language === "ar" ? "rtl" : "ltr"}>
+            {t.clients.suppliers}
+          </h2>
 
           <div className="logos-marquee-wrapper">
             <div className="logos-marquee-track logos-marquee-track--reverse">
