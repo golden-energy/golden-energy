@@ -260,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Clients & Suppliers */}
-      <section className="clients-suppliers" id="clients">
+      <section className="clients-suppliers" id="clients" dir="ltr">
         <div className="container">
           <h2>{t.clients.title}</h2>
 
