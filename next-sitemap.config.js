@@ -1,4 +1,3 @@
-/** @type {import('next-sitemap').IConfig} */
 module.exports = {
     siteUrl: 'https://www.goldenenerggy.com/',
     generateRobotsTxt: true,
