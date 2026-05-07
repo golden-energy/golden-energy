@@ -2,32 +2,31 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldenenergy.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Golden Energy | Solar Energy Solutions in Egypt",
+    default: "Golden Energy | Electrical Supply & Installation in Egypt",
     template: "%s | Golden Energy",
   },
 
   description:
-    "Golden Energy provides professional solar energy solutions, renewable energy systems, installation services, and sustainable power solutions for homes, businesses, and projects in Egypt.",
+    "شركة Golden Energy في مصر تقدم توريدات كهربائية عالية الجودة، تصميم الشبكات الكهربائية، تركيب وتشغيل الأنظمة، وصيانة دورية للمصانع والمباني التجارية. حلول كهربائية موثوقة ومتطورة لكل احتياجات الطاقة.",
 
   keywords: [
     "Golden Energy",
-    "solar energy Egypt",
-    "solar panels Egypt",
-    "renewable energy",
-    "solar installation",
-    "solar power systems",
-    "energy solutions",
-    "clean energy",
-    "sustainable energy",
-    "solar company in Egypt",
-    "إنتاج الطاقة الشمسية",
-    "الطاقة الشمسية في مصر",
+    "electrical supply Egypt",
+    "electrical network design",
+    "installation & commissioning",
+    "maintenance & support",
+    "low & medium voltage solutions",
+    "توريدات كهربائية",
+    "تركيب كهرباء",
+    "صيانة كهربائية",
+    "حلول كهربائية",
+    "شركة كهرباء في مصر",
   ],
 
   authors: [{ name: "Golden Energy" }],
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
 
   applicationName: "Golden Energy",
 
-  category: "Renewable Energy",
+  category: "Electrical Supply & Services",
 
   alternates: {
     canonical: "/",
@@ -48,24 +47,24 @@ export const metadata: Metadata = {
     alternateLocale: ["ar_EG"],
     url: siteUrl,
     siteName: "Golden Energy",
-    title: "Golden Energy | Solar Energy Solutions in Egypt",
+    title: "Golden Energy | Electrical Supply & Installation in Egypt",
     description:
-      "Professional solar energy solutions, renewable energy systems, installation services, and sustainable power solutions in Egypt.",
+      "Professional electrical supply, network design, installation, and maintenance services in Egypt for homes, businesses, and industrial projects.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Golden Energy solar energy solutions",
+        alt: "Golden Energy electrical supply and installation",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Golden Energy | Solar Energy Solutions in Egypt",
+    title: "Golden Energy | Electrical Supply & Installation in Egypt",
     description:
-      "Professional solar energy solutions, renewable energy systems, installation services, and sustainable power solutions in Egypt.",
+      "Professional electrical supply, network design, installation, and maintenance services in Egypt for homes, businesses, and industrial projects.",
     images: ["/og-image.jpg"],
   },
 
@@ -89,8 +88,8 @@ export const metadata: Metadata = {
 
   manifest: "/site.webmanifest",
   verification: {
-    google: "c4ddd16a2587b89e"
-  }
+    google: "c4ddd16a2587b89e",
+  },
 };
 
 export const viewport: Viewport = {
