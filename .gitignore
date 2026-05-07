@@ -42,7 +42,3 @@ next-env.d.ts
 
 #Backend
 /backend
-
-public/sitemap.xml
-public/sitemap-0.xml
-public/robots.txt
