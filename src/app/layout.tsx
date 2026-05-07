@@ -88,6 +88,9 @@ export const metadata: Metadata = {
   },
 
   manifest: "/site.webmanifest",
+  verification: {
+    google: "c4ddd16a2587b89e"
+  }
 };
 
 export const viewport: Viewport = {
