@@ -1,8 +1,9 @@
+// src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldenenergy.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goldenenerggy.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 
   description:
     "شركة Golden Energy في مصر تقدم توريدات كهربائية عالية الجودة، تصميم الشبكات الكهربائية، تركيب وتشغيل الأنظمة، وصيانة دورية للمصانع والمباني التجارية. حلول كهربائية موثوقة ومتطورة لكل احتياجات الطاقة.",
+
+  authors: [{ name: "Golden Energy" }],
+  creator: "Golden Energy",
+  publisher: "Golden Energy",
+  applicationName: "Golden Energy",
+  category: "Electrical Supply & Services",
 
   keywords: [
     "Golden Energy",
@@ -28,14 +35,6 @@ export const metadata: Metadata = {
     "حلول كهربائية",
     "شركة كهرباء في مصر",
   ],
-
-  authors: [{ name: "Golden Energy" }],
-  creator: "Golden Energy",
-  publisher: "Golden Energy",
-
-  applicationName: "Golden Energy",
-
-  category: "Electrical Supply & Services",
 
   alternates: {
     canonical: "https://www.goldenenerggy.com",
@@ -87,6 +86,7 @@ export const metadata: Metadata = {
   },
 
   manifest: "/site.webmanifest",
+
   verification: {
     google: "c4ddd16a2587b89e",
   },
@@ -105,8 +105,28 @@ export default function RootLayout({
 }>) {
   return (
     <LanguageProvider>
-      <html lang="en" dir="ltr">
-        <body>{children}</body>
+      <html lang="ar" dir="ltr">
+        <body>
+          {children}
+
+          {/* Structured Data JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Golden Energy",
+                "url": "https://www.goldenenerggy.com",
+                "logo": "https://www.goldenenerggy.com/image/logo/logo.png",
+                "sameAs": [
+                  "https://www.facebook.com/goldenenerggy",
+                  "https://www.linkedin.com/company/goldenenerggy"
+                ]
+              }),
+            }}
+          />
+        </body>
       </html>
     </LanguageProvider>
   );
