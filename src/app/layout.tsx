@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   category: "Electrical Supply & Services",
 
   alternates: {
-    canonical: "https://goldenenerggy.com",
+    canonical: "https://www.goldenenerggy.com",
   },
 
   openGraph: {
