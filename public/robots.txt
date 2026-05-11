@@ -1,8 +1,1 @@
-# robots.txt for goldenenerggy.com
 
-# Allow all robots to crawl all pages
-User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://www.goldenenerggy.com/sitemap.xml
