@@ -129,17 +129,17 @@ export default function Home() {
       <section className="stats-strip">
         <div className="container stats-container">
           <div className="stat-card">
-            <h2>5+</h2>
+            <h2>6+</h2>
             <p>{t.stats.experience}</p>
           </div>
 
           <div className="stat-card">
-            <h2>50+</h2>
+            <h2>70+</h2>
             <p>{t.stats.completed}</p>
           </div>
 
           <div className="stat-card">
-            <h2>30+</h2>
+            <h2>50+</h2>
             <p>{t.stats.clients}</p>
           </div>
 
